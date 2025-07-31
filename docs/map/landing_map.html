@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d9934cf479414755681327990a7c6ded {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+</head>
+<body>
+    
+    
+<script>
+    setTimeout(function() {
+        if (typeof map_d9934cf479414755681327990a7c6ded !== 'undefined' && map_d9934cf479414755681327990a7c6ded.attributionControl && map_d9934cf479414755681327990a7c6ded.attributionControl.setPrefix) {
+            map_d9934cf479414755681327990a7c6ded.attributionControl.setPrefix('');
+        }
+    }, 50);
+</script>
+    
+            <div class="folium-map" id="map_d9934cf479414755681327990a7c6ded" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d9934cf479414755681327990a7c6ded = L.map(
+                "map_d9934cf479414755681327990a7c6ded",
+                {
+                    center: [39.8097343, -98.5556199],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": false,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.zoom( { position: "topright" } ).addTo(map_d9934cf479414755681327990a7c6ded);
+
+            
+
+        
+    
+            var tile_layer_6d140d7d547a85a1455d8cc108d566fe = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6d140d7d547a85a1455d8cc108d566fe.addTo(map_d9934cf479414755681327990a7c6ded);
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topright",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_d9934cf479414755681327990a7c6ded);
+        
+    
+            var feature_group_2446f64c3238506ea7ac33d128a9433f = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_6ed13b854ddd4243a3d05f1109e42ab8 = L.marker(
+                [33.417721, -111.934383],
+                {
+  "name": "Arizona State University",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_e777b0baafbde566378ffbc3259f7d24 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_6ed13b854ddd4243a3d05f1109e42ab8.setIcon(beautify_icon_e777b0baafbde566378ffbc3259f7d24);
+        
+    
+        var popup_af5e4c30be8d4af0d3d5631ece6a27e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_841c35dd724d665e8b5779b48438a227 = $(`<div id="html_841c35dd724d665e8b5779b48438a227" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Arizona State University</b></div><div style="font-size:13px;"><i>Tempe, Arizona</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.asu.edu/">https://www.asu.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Arizona State University recieved  <b>34493 applications from men</b> and <b>34347 applications from women</b>.  Of these applications, <b>30814 men</b> and <b>31270 women were admitted</b>, and  <b>7175 men</b> and <b>6927 women ultimately enrolled</b>. Overall, <b>89% of men</b>  were admitted and <b>23%</b> ultimately enrolled, compared to <b>91% of female</b> applicants being accepted  and <b>22%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>33578 men</b> and <b>31596 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>51%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>8124 men</b> and <b>6295 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>56%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>5553 men</b> and <b>5610 women</b>, six years later, <b>3621 men</b> and <b>3953 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>65%</b>  and <b>female graduation rate</b> of <b>70%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_af5e4c30be8d4af0d3d5631ece6a27e9.setContent(html_841c35dd724d665e8b5779b48438a227);
+            
+        
+
+        marker_6ed13b854ddd4243a3d05f1109e42ab8.bindPopup(popup_af5e4c30be8d4af0d3d5631ece6a27e9)
+        ;
+
+        
+    
+    
+            marker_6ed13b854ddd4243a3d05f1109e42ab8.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Arizona State University</b><br>(Tempe, Arizona)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6ed13b854ddd4243a3d05f1109e42ab8.setIcon(beautify_icon_e777b0baafbde566378ffbc3259f7d24);
+            
+    
+            var marker_a22a6359fc7728e6b92732c69d82dd81 = L.marker(
+                [41.98749, -70.974553],
+                {
+  "name": "Bridgewater State University",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_610fad2a2c265a593f89f3522d3f142b = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_a22a6359fc7728e6b92732c69d82dd81.setIcon(beautify_icon_610fad2a2c265a593f89f3522d3f142b);
+        
+    
+        var popup_697e6fcfc5b2907c22f534021eebedab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a9dc8d7e074faf3c2cdcfc09aea439b = $(`<div id="html_9a9dc8d7e074faf3c2cdcfc09aea439b" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Bridgewater State University</b></div><div style="font-size:13px;"><i>Bridgewater, Massachusetts</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.bridgew.edu/">https://www.bridgew.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Bridgewater State University recieved  <b>3745 applications from men</b> and <b>4886 applications from women</b>.  Of these applications, <b>3247 men</b> and <b>4451 women were admitted</b>, and  <b>705 men</b> and <b>875 women ultimately enrolled</b>. Overall, <b>86% of men</b>  were admitted and <b>21%</b> ultimately enrolled, compared to <b>91% of female</b> applicants being accepted  and <b>19%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>3436 men</b> and <b>4736 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>42%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>362 men</b> and <b>1016 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>26%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>617 men</b> and <b>859 women</b>, six years later, <b>276 men</b> and <b>530 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>44%</b>  and <b>female graduation rate</b> of <b>61%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_697e6fcfc5b2907c22f534021eebedab.setContent(html_9a9dc8d7e074faf3c2cdcfc09aea439b);
+            
+        
+
+        marker_a22a6359fc7728e6b92732c69d82dd81.bindPopup(popup_697e6fcfc5b2907c22f534021eebedab)
+        ;
+
+        
+    
+    
+            marker_a22a6359fc7728e6b92732c69d82dd81.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Bridgewater State University</b><br>(Bridgewater, Massachusetts)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a22a6359fc7728e6b92732c69d82dd81.setIcon(beautify_icon_610fad2a2c265a593f89f3522d3f142b);
+            
+    
+            var marker_5aaf5c36bcc33385d2f9954eb34348ce = L.marker(
+                [36.135589, -86.794807],
+                {
+  "name": "Belmont University",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_794828c557ba51ce840b785c96e0a8b9 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_5aaf5c36bcc33385d2f9954eb34348ce.setIcon(beautify_icon_794828c557ba51ce840b785c96e0a8b9);
+        
+    
+        var popup_07ad79c049d1e45083b9c02c1d455a99 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_522f30e4443b066d5e53cf2ef0633981 = $(`<div id="html_522f30e4443b066d5e53cf2ef0633981" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Belmont University</b></div><div style="font-size:13px;"><i>Nashville, Tennessee</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.belmont.edu/">https://www.belmont.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Belmont University recieved  <b>2829 applications from men</b> and <b>6121 applications from women</b>.  Of these applications, <b>2691 men</b> and <b>5933 women were admitted</b>, and  <b>578 men</b> and <b>1091 women ultimately enrolled</b>. Overall, <b>95% of men</b>  were admitted and <b>21%</b> ultimately enrolled, compared to <b>96% of female</b> applicants being accepted  and <b>18%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>2512 men</b> and <b>4818 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>34%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>441 men</b> and <b>1091 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>28%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>519 men</b> and <b>1075 women</b>, six years later, <b>340 men</b> and <b>800 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>65%</b>  and <b>female graduation rate</b> of <b>74%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_07ad79c049d1e45083b9c02c1d455a99.setContent(html_522f30e4443b066d5e53cf2ef0633981);
+            
+        
+
+        marker_5aaf5c36bcc33385d2f9954eb34348ce.bindPopup(popup_07ad79c049d1e45083b9c02c1d455a99)
+        ;
+
+        
+    
+    
+            marker_5aaf5c36bcc33385d2f9954eb34348ce.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Belmont University</b><br>(Nashville, Tennessee)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5aaf5c36bcc33385d2f9954eb34348ce.setIcon(beautify_icon_794828c557ba51ce840b785c96e0a8b9);
+            
+    
+            var marker_0a103632f7fd5cbbed63462199fd702c = L.marker(
+                [42.622969, -87.820924],
+                {
+  "name": "Carthage College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_b2cc480cbef3ce3a6f6b1d542dfd733c = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_0a103632f7fd5cbbed63462199fd702c.setIcon(beautify_icon_b2cc480cbef3ce3a6f6b1d542dfd733c);
+        
+    
+        var popup_fa8a3f60fd8b8dc83ec595eb6d513aef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d5a11b32731e8057f0a86687e84d08d = $(`<div id="html_8d5a11b32731e8057f0a86687e84d08d" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Carthage College</b></div><div style="font-size:13px;"><i>Kenosha, Wisconsin</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.carthage.edu/">https://www.carthage.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Carthage College recieved  <b>4009 applications from men</b> and <b>4035 applications from women</b>.  Of these applications, <b>3285 men</b> and <b>3484 women were admitted</b>, and  <b>350 men</b> and <b>428 women ultimately enrolled</b>. Overall, <b>81% of men</b>  were admitted and <b>10%</b> ultimately enrolled, compared to <b>86% of female</b> applicants being accepted  and <b>12%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>1173 men</b> and <b>1469 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>44%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>58 men</b> and <b>71 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>44%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>314 men</b> and <b>390 women</b>, six years later, <b>170 men</b> and <b>256 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>54%</b>  and <b>female graduation rate</b> of <b>65%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_fa8a3f60fd8b8dc83ec595eb6d513aef.setContent(html_8d5a11b32731e8057f0a86687e84d08d);
+            
+        
+
+        marker_0a103632f7fd5cbbed63462199fd702c.bindPopup(popup_fa8a3f60fd8b8dc83ec595eb6d513aef)
+        ;
+
+        
+    
+    
+            marker_0a103632f7fd5cbbed63462199fd702c.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Carthage College</b><br>(Kenosha, Wisconsin)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0a103632f7fd5cbbed63462199fd702c.setIcon(beautify_icon_b2cc480cbef3ce3a6f6b1d542dfd733c);
+            
+    
+            var marker_4190b76b591b6d1d0a6b2f26493e2087 = L.marker(
+                [35.217774, -80.829796],
+                {
+  "name": "Central Piedmont Community College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_3f4a992f5b8a2c1e89a9c64f207951f0 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_4190b76b591b6d1d0a6b2f26493e2087.setIcon(beautify_icon_3f4a992f5b8a2c1e89a9c64f207951f0);
+        
+    
+        var popup_b654e7e8436c9d3bcc5f7cbedaa20441 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da8fad65abdb5af306e5480be4f7ddab = $(`<div id="html_da8fad65abdb5af306e5480be4f7ddab" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Central Piedmont Community College</b></div><div style="font-size:13px;"><i>Charlotte, North Carolina</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.cpcc.edu/">https://www.cpcc.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>7824 men</b> and <b>10622 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>42%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>552 men</b> and <b>586 women</b>, three years later, <b>127 men</b> and <b>173 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>23%</b>  and <b>female graduation rate</b> of <b>29%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_b654e7e8436c9d3bcc5f7cbedaa20441.setContent(html_da8fad65abdb5af306e5480be4f7ddab);
+            
+        
+
+        marker_4190b76b591b6d1d0a6b2f26493e2087.bindPopup(popup_b654e7e8436c9d3bcc5f7cbedaa20441)
+        ;
+
+        
+    
+    
+            marker_4190b76b591b6d1d0a6b2f26493e2087.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Central Piedmont Community College</b><br>(Charlotte, North Carolina)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4190b76b591b6d1d0a6b2f26493e2087.setIcon(beautify_icon_3f4a992f5b8a2c1e89a9c64f207951f0);
+            
+    
+            var marker_d3b9dc474380a0f011b0157d5c7505bf = L.marker(
+                [44.280811, -72.573774],
+                {
+  "name": "Community College of Vermont",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_ac64d7bb6beaab4d976d770e320a1b9e = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_d3b9dc474380a0f011b0157d5c7505bf.setIcon(beautify_icon_ac64d7bb6beaab4d976d770e320a1b9e);
+        
+    
+        var popup_5d1a9e1239f73fab57e7096fb0f62dca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_47c199fb8c669818a9f0ad05e4012e42 = $(`<div id="html_47c199fb8c669818a9f0ad05e4012e42" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Community College of Vermont</b></div><div style="font-size:13px;"><i>Montpelier, Vermont</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.ccv.edu/">https://www.ccv.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>1641 men</b> and <b>3736 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>30%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>66 men</b> and <b>95 women</b>, three years later, <b>15 men</b> and <b>27 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>22%</b>  and <b>female graduation rate</b> of <b>28%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_5d1a9e1239f73fab57e7096fb0f62dca.setContent(html_47c199fb8c669818a9f0ad05e4012e42);
+            
+        
+
+        marker_d3b9dc474380a0f011b0157d5c7505bf.bindPopup(popup_5d1a9e1239f73fab57e7096fb0f62dca)
+        ;
+
+        
+    
+    
+            marker_d3b9dc474380a0f011b0157d5c7505bf.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Community College of Vermont</b><br>(Montpelier, Vermont)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d3b9dc474380a0f011b0157d5c7505bf.setIcon(beautify_icon_ac64d7bb6beaab4d976d770e320a1b9e);
+            
+    
+            var marker_f7f52d1b0f29b947d162db22616fb4f1 = L.marker(
+                [42.705487, -73.862981],
+                {
+  "name": "Excelsior University",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_325d4da0aa3198b05600d325aad07539 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_f7f52d1b0f29b947d162db22616fb4f1.setIcon(beautify_icon_325d4da0aa3198b05600d325aad07539);
+        
+    
+        var popup_40f6e3b37f304148245f3aba6ca74466 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86ae30aa14398624bebf10cd8f71c063 = $(`<div id="html_86ae30aa14398624bebf10cd8f71c063" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Excelsior University</b></div><div style="font-size:13px;"><i>Albany, New York</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.excelsior.edu/">https://www.excelsior.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>6280 men</b> and <b>6421 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>49%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>982 men</b> and <b>794 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>55%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_40f6e3b37f304148245f3aba6ca74466.setContent(html_86ae30aa14398624bebf10cd8f71c063);
+            
+        
+
+        marker_f7f52d1b0f29b947d162db22616fb4f1.bindPopup(popup_40f6e3b37f304148245f3aba6ca74466)
+        ;
+
+        
+    
+    
+            marker_f7f52d1b0f29b947d162db22616fb4f1.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Excelsior University</b><br>(Albany, New York)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f7f52d1b0f29b947d162db22616fb4f1.setIcon(beautify_icon_325d4da0aa3198b05600d325aad07539);
+            
+    
+            var marker_22c30303bc14f8e0edb423a305dfa3bb = L.marker(
+                [35.751505, -83.964223],
+                {
+  "name": "Maryville College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_2cdd915a778c79779efe96063f19dd99 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_22c30303bc14f8e0edb423a305dfa3bb.setIcon(beautify_icon_2cdd915a778c79779efe96063f19dd99);
+        
+    
+        var popup_bdfe2f4dca0123adde8162dbdfe1f00e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a35ba1e8c219886666401c006786cd58 = $(`<div id="html_a35ba1e8c219886666401c006786cd58" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Maryville College</b></div><div style="font-size:13px;"><i>Maryville, Tennessee</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.maryvillecollege.edu/">https://www.maryvillecollege.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Maryville College recieved  <b>1202 applications from men</b> and <b>1607 applications from women</b>.  Of these applications, <b>725 men</b> and <b>1120 women were admitted</b>, and  <b>141 men</b> and <b>176 women ultimately enrolled</b>. Overall, <b>60% of men</b>  were admitted and <b>19%</b> ultimately enrolled, compared to <b>69% of female</b> applicants being accepted  and <b>15%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>524 men</b> and <b>618 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>45%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>4 men</b> and <b>1 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>80%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>150 men</b> and <b>151 women</b>, six years later, <b>56 men</b> and <b>86 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>37%</b>  and <b>female graduation rate</b> of <b>56%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_bdfe2f4dca0123adde8162dbdfe1f00e.setContent(html_a35ba1e8c219886666401c006786cd58);
+            
+        
+
+        marker_22c30303bc14f8e0edb423a305dfa3bb.bindPopup(popup_bdfe2f4dca0123adde8162dbdfe1f00e)
+        ;
+
+        
+    
+    
+            marker_22c30303bc14f8e0edb423a305dfa3bb.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Maryville College</b><br>(Maryville, Tennessee)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_22c30303bc14f8e0edb423a305dfa3bb.setIcon(beautify_icon_2cdd915a778c79779efe96063f19dd99);
+            
+    
+            var marker_eb0a089c26294659e8ad52c65af73171 = L.marker(
+                [33.390323, -111.871255],
+                {
+  "name": "Mesa Community College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_218965813bc2bba0d6aef8336c58040c = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_eb0a089c26294659e8ad52c65af73171.setIcon(beautify_icon_218965813bc2bba0d6aef8336c58040c);
+        
+    
+        var popup_7b05cc91ba12d54ac5f85c9263cb2625 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a8d3a9bb1a2ae5f1a90fad548046b4e3 = $(`<div id="html_a8d3a9bb1a2ae5f1a90fad548046b4e3" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Mesa Community College</b></div><div style="font-size:13px;"><i>Mesa, Arizona</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.mesacc.edu/">https://www.mesacc.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>7633 men</b> and <b>8991 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>45%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>446 men</b> and <b>527 women</b>, three years later, <b>86 men</b> and <b>101 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>19%</b>  and <b>female graduation rate</b> of <b>19%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_7b05cc91ba12d54ac5f85c9263cb2625.setContent(html_a8d3a9bb1a2ae5f1a90fad548046b4e3);
+            
+        
+
+        marker_eb0a089c26294659e8ad52c65af73171.bindPopup(popup_7b05cc91ba12d54ac5f85c9263cb2625)
+        ;
+
+        
+    
+    
+            marker_eb0a089c26294659e8ad52c65af73171.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Mesa Community College</b><br>(Mesa, Arizona)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eb0a089c26294659e8ad52c65af73171.setIcon(beautify_icon_218965813bc2bba0d6aef8336c58040c);
+            
+    
+            var marker_415ded724487177b5d35ed058daba9df = L.marker(
+                [40.637215, -103.197329],
+                {
+  "name": "Northeastern Junior College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_b4af7112bb79189243ecff89e8063e20 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_415ded724487177b5d35ed058daba9df.setIcon(beautify_icon_b4af7112bb79189243ecff89e8063e20);
+        
+    
+        var popup_e1edfcb7ea22391c76c6aff6f3cd818b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10b8ae004dbd7095a0c0bff50398b430 = $(`<div id="html_10b8ae004dbd7095a0c0bff50398b430" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Northeastern Junior College</b></div><div style="font-size:13px;"><i>Sterling, Colorado</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.njc.edu/">https://www.njc.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>546 men</b> and <b>956 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>36%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>136 men</b> and <b>144 women</b>, three years later, <b>65 men</b> and <b>85 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>47%</b>  and <b>female graduation rate</b> of <b>59%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_e1edfcb7ea22391c76c6aff6f3cd818b.setContent(html_10b8ae004dbd7095a0c0bff50398b430);
+            
+        
+
+        marker_415ded724487177b5d35ed058daba9df.bindPopup(popup_e1edfcb7ea22391c76c6aff6f3cd818b)
+        ;
+
+        
+    
+    
+            marker_415ded724487177b5d35ed058daba9df.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Northeastern Junior College</b><br>(Sterling, Colorado)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_415ded724487177b5d35ed058daba9df.setIcon(beautify_icon_b4af7112bb79189243ecff89e8063e20);
+            
+    
+            var marker_8e1097b508d3e43695ac19ea22689f29 = L.marker(
+                [35.189051, -80.833509],
+                {
+  "name": "Queens University",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_888b3f654ea5ce3e778344220a985166 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_8e1097b508d3e43695ac19ea22689f29.setIcon(beautify_icon_888b3f654ea5ce3e778344220a985166);
+        
+    
+        var popup_4052420c9364ed5b3df52f7c50651627 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3872ba2aae5d5871b642f8d79e67478a = $(`<div id="html_3872ba2aae5d5871b642f8d79e67478a" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Queens University</b></div><div style="font-size:13px;"><i>Charlotte, North Carolina</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.queens.edu/">https://www.queens.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Queens University recieved  <b>1413 applications from men</b> and <b>2944 applications from women</b>.  Of these applications, <b>961 men</b> and <b>1988 women were admitted</b>, and  <b>162 men</b> and <b>237 women ultimately enrolled</b>. Overall, <b>68% of men</b>  were admitted and <b>16%</b> ultimately enrolled, compared to <b>67% of female</b> applicants being accepted  and <b>11%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>515 men</b> and <b>858 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>37%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>143 men</b> and <b>330 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>30%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>143 men</b> and <b>238 women</b>, six years later, <b>84 men</b> and <b>167 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>58%</b>  and <b>female graduation rate</b> of <b>70%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_4052420c9364ed5b3df52f7c50651627.setContent(html_3872ba2aae5d5871b642f8d79e67478a);
+            
+        
+
+        marker_8e1097b508d3e43695ac19ea22689f29.bindPopup(popup_4052420c9364ed5b3df52f7c50651627)
+        ;
+
+        
+    
+    
+            marker_8e1097b508d3e43695ac19ea22689f29.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Queens University</b><br>(Charlotte, North Carolina)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8e1097b508d3e43695ac19ea22689f29.setIcon(beautify_icon_888b3f654ea5ce3e778344220a985166);
+            
+    
+            var marker_f2c9e650bc8a9f3688f565fde181801a = L.marker(
+                [43.289317, -123.332475],
+                {
+  "name": "Umpqua Community College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_ba0a9bbc2a0f4495dbaf42108632dea1 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_f2c9e650bc8a9f3688f565fde181801a.setIcon(beautify_icon_ba0a9bbc2a0f4495dbaf42108632dea1);
+        
+    
+        var popup_1ca229f00d9a20ca18cb45e4a60fb9b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_957a6745dbef6bd5976ca0612a0a5ea8 = $(`<div id="html_957a6745dbef6bd5976ca0612a0a5ea8" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Umpqua Community College</b></div><div style="font-size:13px;"><i>Roseburg, Oregon</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.umpqua.edu/">https://www.umpqua.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>885 men</b> and <b>1502 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>37%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>156 men</b> and <b>202 women</b>, three years later, <b>48 men</b> and <b>66 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>30%</b>  and <b>female graduation rate</b> of <b>32%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_1ca229f00d9a20ca18cb45e4a60fb9b9.setContent(html_957a6745dbef6bd5976ca0612a0a5ea8);
+            
+        
+
+        marker_f2c9e650bc8a9f3688f565fde181801a.bindPopup(popup_1ca229f00d9a20ca18cb45e4a60fb9b9)
+        ;
+
+        
+    
+    
+            marker_f2c9e650bc8a9f3688f565fde181801a.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Umpqua Community College</b><br>(Roseburg, Oregon)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f2c9e650bc8a9f3688f565fde181801a.setIcon(beautify_icon_ba0a9bbc2a0f4495dbaf42108632dea1);
+            
+    
+            var marker_970c4b21250f5432c26fa716e8b19f34 = L.marker(
+                [47.65538, -122.30514],
+                {
+  "name": "University of Washington, Seattle",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_d3d32e304875532cf72cd16c63d5d920 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_970c4b21250f5432c26fa716e8b19f34.setIcon(beautify_icon_d3d32e304875532cf72cd16c63d5d920);
+        
+    
+        var popup_0a1765bae592af531dce914175e7b875 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5657eaec052adfdebba54301fecc0623 = $(`<div id="html_5657eaec052adfdebba54301fecc0623" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>University of Washington, Seattle</b></div><div style="font-size:13px;"><i>Seattle, Washington</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.washington.edu/">https://www.washington.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>University of Washington, Seattle recieved  <b>27518 applications from men</b> and <b>34910 applications from women</b>.  Of these applications, <b>10590 men</b> and <b>15962 women were admitted</b>, and  <b>3109 men</b> and <b>3902 women ultimately enrolled</b>. Overall, <b>38% of men</b>  were admitted and <b>29%</b> ultimately enrolled, compared to <b>45% of female</b> applicants being accepted  and <b>24%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>21134 men</b> and <b>18381 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>53%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>7108 men</b> and <b>8997 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>44%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>3051 men</b> and <b>3662 women</b>, six years later, <b>2485 men</b> and <b>3134 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>81%</b>  and <b>female graduation rate</b> of <b>85%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_0a1765bae592af531dce914175e7b875.setContent(html_5657eaec052adfdebba54301fecc0623);
+            
+        
+
+        marker_970c4b21250f5432c26fa716e8b19f34.bindPopup(popup_0a1765bae592af531dce914175e7b875)
+        ;
+
+        
+    
+    
+            marker_970c4b21250f5432c26fa716e8b19f34.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>University of Washington, Seattle</b><br>(Seattle, Washington)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_970c4b21250f5432c26fa716e8b19f34.setIcon(beautify_icon_d3d32e304875532cf72cd16c63d5d920);
+            
+    
+            var marker_d040c171fadb30d8a56c1940fcdbc9a3 = L.marker(
+                [28.602159, -81.200889],
+                {
+  "name": "University of Central Florida",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_3d5c83667fadd233cba0c2d1933af7a2 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_d040c171fadb30d8a56c1940fcdbc9a3.setIcon(beautify_icon_3d5c83667fadd233cba0c2d1933af7a2);
+        
+    
+        var popup_0ee8ce3ce512e3410f5deefdb25d8896 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1273a9b0d00c73dd1ab8831642ecc9bd = $(`<div id="html_1273a9b0d00c73dd1ab8831642ecc9bd" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>University of Central Florida</b></div><div style="font-size:13px;"><i>Orlando, Florida</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.ucf.edu/">https://www.ucf.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>University of Central Florida recieved  <b>25467 applications from men</b> and <b>35160 applications from women</b>.  Of these applications, <b>10508 men</b> and <b>13453 women were admitted</b>, and  <b>3986 men</b> and <b>4210 women ultimately enrolled</b>. Overall, <b>41% of men</b>  were admitted and <b>37%</b> ultimately enrolled, compared to <b>38% of female</b> applicants being accepted  and <b>31%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>27216 men</b> and <b>32254 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>45%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>4108 men</b> and <b>5655 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>42%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>3165 men</b> and <b>3515 women</b>, six years later, <b>2236 men</b> and <b>2784 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>70%</b>  and <b>female graduation rate</b> of <b>79%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_0ee8ce3ce512e3410f5deefdb25d8896.setContent(html_1273a9b0d00c73dd1ab8831642ecc9bd);
+            
+        
+
+        marker_d040c171fadb30d8a56c1940fcdbc9a3.bindPopup(popup_0ee8ce3ce512e3410f5deefdb25d8896)
+        ;
+
+        
+    
+    
+            marker_d040c171fadb30d8a56c1940fcdbc9a3.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>University of Central Florida</b><br>(Orlando, Florida)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d040c171fadb30d8a56c1940fcdbc9a3.setIcon(beautify_icon_3d5c83667fadd233cba0c2d1933af7a2);
+            
+    
+            var marker_4c632baa1dcbce4b0545de173f8e038d = L.marker(
+                [46.859312, -113.982912],
+                {
+  "name": "University of Montana",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_795a029171f34da26afc0f76bbfff483 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_4c632baa1dcbce4b0545de173f8e038d.setIcon(beautify_icon_795a029171f34da26afc0f76bbfff483);
+        
+    
+        var popup_f7395dfba8266dba190125ff001ed659 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d11b4c64c97071fae87065f4f289bb0 = $(`<div id="html_4d11b4c64c97071fae87065f4f289bb0" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>University of Montana</b></div><div style="font-size:13px;"><i>Missoula, Montana</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.umt.edu/">https://www.umt.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>University of Montana recieved  <b>4042 applications from men</b> and <b>5422 applications from women</b>.  Of these applications, <b>3815 men</b> and <b>5233 women were admitted</b>, and  <b>727 men</b> and <b>925 women ultimately enrolled</b>. Overall, <b>94% of men</b>  were admitted and <b>19%</b> ultimately enrolled, compared to <b>96% of female</b> applicants being accepted  and <b>17%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>3253 men</b> and <b>4317 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>42%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>908 men</b> and <b>1849 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>32%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>504 men</b> and <b>715 women</b>, six years later, <b>210 men</b> and <b>374 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>41%</b>  and <b>female graduation rate</b> of <b>52%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_f7395dfba8266dba190125ff001ed659.setContent(html_4d11b4c64c97071fae87065f4f289bb0);
+            
+        
+
+        marker_4c632baa1dcbce4b0545de173f8e038d.bindPopup(popup_f7395dfba8266dba190125ff001ed659)
+        ;
+
+        
+    
+    
+            marker_4c632baa1dcbce4b0545de173f8e038d.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>University of Montana</b><br>(Missoula, Montana)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4c632baa1dcbce4b0545de173f8e038d.setIcon(beautify_icon_795a029171f34da26afc0f76bbfff483);
+            
+    
+            var marker_0e87e9c13eff0627bc0f37e9f26e3cc5 = L.marker(
+                [44.045146, -123.075792],
+                {
+  "name": "University of Oregon",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_bae46f834da2c21aaa8c6d502729a0be = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_0e87e9c13eff0627bc0f37e9f26e3cc5.setIcon(beautify_icon_bae46f834da2c21aaa8c6d502729a0be);
+        
+    
+        var popup_d40adb9b44842e4cfa7fc2b059b49654 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92abcaa44699ec390163dec178a4a5fa = $(`<div id="html_92abcaa44699ec390163dec178a4a5fa" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>University of Oregon</b></div><div style="font-size:13px;"><i>Eugene, Oregon</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.uoregon.edu/">https://www.uoregon.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>University of Oregon recieved  <b>16417 applications from men</b> and <b>22983 applications from women</b>.  Of these applications, <b>13617 men</b> and <b>19915 women were admitted</b>, and  <b>2132 men</b> and <b>2900 women ultimately enrolled</b>. Overall, <b>82% of men</b>  were admitted and <b>15%</b> ultimately enrolled, compared to <b>86% of female</b> applicants being accepted  and <b>14%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>8785 men</b> and <b>11178 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>44%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>1621 men</b> and <b>2202 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>42%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>1706 men</b> and <b>2154 women</b>, six years later, <b>1180 men</b> and <b>1579 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>69%</b>  and <b>female graduation rate</b> of <b>73%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_d40adb9b44842e4cfa7fc2b059b49654.setContent(html_92abcaa44699ec390163dec178a4a5fa);
+            
+        
+
+        marker_0e87e9c13eff0627bc0f37e9f26e3cc5.bindPopup(popup_d40adb9b44842e4cfa7fc2b059b49654)
+        ;
+
+        
+    
+    
+            marker_0e87e9c13eff0627bc0f37e9f26e3cc5.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>University of Oregon</b><br>(Eugene, Oregon)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0e87e9c13eff0627bc0f37e9f26e3cc5.setIcon(beautify_icon_bae46f834da2c21aaa8c6d502729a0be);
+            
+    
+            var marker_23c57cdc0b75f5a12264c6b2e3b56423 = L.marker(
+                [35.952082, -83.925852],
+                {
+  "name": "University of Tennessee, Knoxville",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_69c990d32a27c460f5e7a6905772bccb = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_23c57cdc0b75f5a12264c6b2e3b56423.setIcon(beautify_icon_69c990d32a27c460f5e7a6905772bccb);
+        
+    
+        var popup_56cb6558299eec4e41f7305344847d75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b0be0876706db2fdf7c1b1782703b0f7 = $(`<div id="html_b0be0876706db2fdf7c1b1782703b0f7" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>University of Tennessee, Knoxville</b></div><div style="font-size:13px;"><i>Knoxville, Tennessee</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.utk.edu/">https://www.utk.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>University of Tennessee, Knoxville recieved  <b>20334 applications from men</b> and <b>30154 applications from women</b>.  Of these applications, <b>9363 men</b> and <b>13858 women were admitted</b>, and  <b>3035 men</b> and <b>3659 women ultimately enrolled</b>. Overall, <b>46% of men</b>  were admitted and <b>32%</b> ultimately enrolled, compared to <b>45% of female</b> applicants being accepted  and <b>26%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>13182 men</b> and <b>15701 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>45%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>3284 men</b> and <b>4137 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>44%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>2324 men</b> and <b>2559 women</b>, six years later, <b>1619 men</b> and <b>1970 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>69%</b>  and <b>female graduation rate</b> of <b>76%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_56cb6558299eec4e41f7305344847d75.setContent(html_b0be0876706db2fdf7c1b1782703b0f7);
+            
+        
+
+        marker_23c57cdc0b75f5a12264c6b2e3b56423.bindPopup(popup_56cb6558299eec4e41f7305344847d75)
+        ;
+
+        
+    
+    
+            marker_23c57cdc0b75f5a12264c6b2e3b56423.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>University of Tennessee, Knoxville</b><br>(Knoxville, Tennessee)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_23c57cdc0b75f5a12264c6b2e3b56423.setIcon(beautify_icon_69c990d32a27c460f5e7a6905772bccb);
+            
+    
+            var marker_0cbfefa29c3b5b6d527baa1e874d58fd = L.marker(
+                [44.477325, -73.196646],
+                {
+  "name": "University of Vermont",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_de1b909532850e787e14fe1e278c0fe4 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_0cbfefa29c3b5b6d527baa1e874d58fd.setIcon(beautify_icon_de1b909532850e787e14fe1e278c0fe4);
+        
+    
+        var popup_4975b8ed5168bc14e943e5d348c768f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de7b31f18497bfb805aad110b0a81933 = $(`<div id="html_de7b31f18497bfb805aad110b0a81933" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>University of Vermont</b></div><div style="font-size:13px;"><i>Burlington, Vermont</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.uvm.edu/">https://www.uvm.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>University of Vermont recieved  <b>9582 applications from men</b> and <b>18654 applications from women</b>.  Of these applications, <b>5577 men</b> and <b>11370 women were admitted</b>, and  <b>1061 men</b> and <b>1835 women ultimately enrolled</b>. Overall, <b>58% of men</b>  were admitted and <b>19%</b> ultimately enrolled, compared to <b>60% of female</b> applicants being accepted  and <b>16%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>4413 men</b> and <b>7755 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>36%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>811 men</b> and <b>1341 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>37%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>995 men</b> and <b>1626 women</b>, six years later, <b>757 men</b> and <b>1302 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>76%</b>  and <b>female graduation rate</b> of <b>80%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_4975b8ed5168bc14e943e5d348c768f4.setContent(html_de7b31f18497bfb805aad110b0a81933);
+            
+        
+
+        marker_0cbfefa29c3b5b6d527baa1e874d58fd.bindPopup(popup_4975b8ed5168bc14e943e5d348c768f4)
+        ;
+
+        
+    
+    
+            marker_0cbfefa29c3b5b6d527baa1e874d58fd.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>University of Vermont</b><br>(Burlington, Vermont)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0cbfefa29c3b5b6d527baa1e874d58fd.setIcon(beautify_icon_de1b909532850e787e14fe1e278c0fe4);
+            
+    
+            var marker_9a8bedf0cfe3872e31d8614218679da6 = L.marker(
+                [43.939623, -72.604498],
+                {
+  "name": "Vermont State University",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_bef0484d9356a355f030d54c2cc6c377 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_9a8bedf0cfe3872e31d8614218679da6.setIcon(beautify_icon_bef0484d9356a355f030d54c2cc6c377);
+        
+    
+        var popup_9d4ec36cc51e35963595b39ffe8c73c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4470639f96aea8c5641454f446119468 = $(`<div id="html_4470639f96aea8c5641454f446119468" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Vermont State University</b></div><div style="font-size:13px;"><i>Randolph, Vermont</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://vermontstate.edu/">https://vermontstate.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Vermont State University recieved  <b>1527 applications from men</b> and <b>1603 applications from women</b>.  Of these applications, <b>1317 men</b> and <b>1288 women were admitted</b>, and  <b>306 men</b> and <b>261 women ultimately enrolled</b>. Overall, <b>86% of men</b>  were admitted and <b>23%</b> ultimately enrolled, compared to <b>80% of female</b> applicants being accepted  and <b>20%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>1822 men</b> and <b>2265 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>44%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>238 men</b> and <b>811 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>22%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>442 men</b> and <b>423 women</b>, six years later, <b>197 men</b> and <b>214 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>44%</b>  and <b>female graduation rate</b> of <b>50%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_9d4ec36cc51e35963595b39ffe8c73c7.setContent(html_4470639f96aea8c5641454f446119468);
+            
+        
+
+        marker_9a8bedf0cfe3872e31d8614218679da6.bindPopup(popup_9d4ec36cc51e35963595b39ffe8c73c7)
+        ;
+
+        
+    
+    
+            marker_9a8bedf0cfe3872e31d8614218679da6.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Vermont State University</b><br>(Randolph, Vermont)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9a8bedf0cfe3872e31d8614218679da6.setIcon(beautify_icon_bef0484d9356a355f030d54c2cc6c377);
+            
+    
+            var marker_325d4a4f030a131d9bbda1a2f8a2bbd9 = L.marker(
+                [40.037588, -86.906],
+                {
+  "name": "Wabash College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_2487db1018f937afc0314ee1586423af = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_325d4a4f030a131d9bbda1a2f8a2bbd9.setIcon(beautify_icon_2487db1018f937afc0314ee1586423af);
+        
+    
+        var popup_bae737f658611ba5c7651a8f051bf384 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1cbb997eba9d6802bc826056e922a4c = $(`<div id="html_e1cbb997eba9d6802bc826056e922a4c" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Wabash College</b></div><div style="font-size:13px;"><i>Crawfordsville, Indiana</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.wabash.edu/">https://www.wabash.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Wabash College recieved  <b>1897 applications from men</b> and <b>0 applications from women</b>.  Of these applications, <b>1191 men</b> and <b>0 women were admitted</b>, and  <b>229 men</b> and <b>0 women ultimately enrolled</b>. Overall, <b>62% of men</b>  were admitted and <b>19%</b> ultimately enrolled, compared to <b>NA% of female</b> applicants being accepted  and <b>NA%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>845 men</b> and <b>0 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>100%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>231 men</b> and <b>NA women</b>, six years later, <b>178 men</b> and <b>NA women graduated</b>, meaning a  <b>male graduation rate</b> of <b>77%</b>  and <b>female graduation rate</b> of <b>NA%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_bae737f658611ba5c7651a8f051bf384.setContent(html_e1cbb997eba9d6802bc826056e922a4c);
+            
+        
+
+        marker_325d4a4f030a131d9bbda1a2f8a2bbd9.bindPopup(popup_bae737f658611ba5c7651a8f051bf384)
+        ;
+
+        
+    
+    
+            marker_325d4a4f030a131d9bbda1a2f8a2bbd9.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Wabash College</b><br>(Crawfordsville, Indiana)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_325d4a4f030a131d9bbda1a2f8a2bbd9.setIcon(beautify_icon_2487db1018f937afc0314ee1586423af);
+            
+    
+            var marker_5f9606ad08ec2bf646645a360d4931e3 = L.marker(
+                [35.650151, -78.706126],
+                {
+  "name": "Wake Technical Community College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_d7c97ec9512adb8fb22099f19e08c219 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_5f9606ad08ec2bf646645a360d4931e3.setIcon(beautify_icon_d7c97ec9512adb8fb22099f19e08c219);
+        
+    
+        var popup_4773893a753916aa181e572c85cb28a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dfe7ee88318068e2225dd349133b1b7c = $(`<div id="html_dfe7ee88318068e2225dd349133b1b7c" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Wake Technical Community College</b></div><div style="font-size:13px;"><i>Raleigh, North Carolina</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.waketech.edu/">https://www.waketech.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>10422 men</b> and <b>12341 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>45%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>860 men</b> and <b>788 women</b>, three years later, <b>276 men</b> and <b>241 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>32%</b>  and <b>female graduation rate</b> of <b>30%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_4773893a753916aa181e572c85cb28a7.setContent(html_dfe7ee88318068e2225dd349133b1b7c);
+            
+        
+
+        marker_5f9606ad08ec2bf646645a360d4931e3.bindPopup(popup_4773893a753916aa181e572c85cb28a7)
+        ;
+
+        
+    
+    
+            marker_5f9606ad08ec2bf646645a360d4931e3.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Wake Technical Community College</b><br>(Raleigh, North Carolina)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5f9606ad08ec2bf646645a360d4931e3.setIcon(beautify_icon_d7c97ec9512adb8fb22099f19e08c219);
+            
+    
+            var marker_e1fb09f0e319cc3a8cde9d3d664a4e41 = L.marker(
+                [35.880911, -84.620051],
+                {
+  "name": "Roane State Community College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_17c6adf8b4a11a49657f803ba21e9fbf = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_e1fb09f0e319cc3a8cde9d3d664a4e41.setIcon(beautify_icon_17c6adf8b4a11a49657f803ba21e9fbf);
+        
+    
+        var popup_3b4014d35c6f939c55915e4b2e437849 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c9b56c058b5c75185d71465efbcb078 = $(`<div id="html_4c9b56c058b5c75185d71465efbcb078" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Roane State Community College</b></div><div style="font-size:13px;"><i>Harriman, Tennessee</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.roanestate.edu/">https://www.roanestate.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>1674 men</b> and <b>3148 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>34%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>276 men</b> and <b>561 women</b>, three years later, <b>88 men</b> and <b>181 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>31%</b>  and <b>female graduation rate</b> of <b>32%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_3b4014d35c6f939c55915e4b2e437849.setContent(html_4c9b56c058b5c75185d71465efbcb078);
+            
+        
+
+        marker_e1fb09f0e319cc3a8cde9d3d664a4e41.bindPopup(popup_3b4014d35c6f939c55915e4b2e437849)
+        ;
+
+        
+    
+    
+            marker_e1fb09f0e319cc3a8cde9d3d664a4e41.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Roane State Community College</b><br>(Harriman, Tennessee)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e1fb09f0e319cc3a8cde9d3d664a4e41.setIcon(beautify_icon_17c6adf8b4a11a49657f803ba21e9fbf);
+            
+    
+            var marker_a89b455f8673ba6f2ca711e6f35a4748 = L.marker(
+                [39.71788, -104.802673],
+                {
+  "name": "Community College of Aurora",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_77f983c2acac28c22f3bfff347bf89a9 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_a89b455f8673ba6f2ca711e6f35a4748.setIcon(beautify_icon_77f983c2acac28c22f3bfff347bf89a9);
+        
+    
+        var popup_494eddc943bf6b310ef419afd3cf1250 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_00c5785f8db22defbf638f2992cb6b8b = $(`<div id="html_00c5785f8db22defbf638f2992cb6b8b" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Community College of Aurora</b></div><div style="font-size:13px;"><i>Aurora, Colorado</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.ccaurora.edu/">https://www.ccaurora.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>3786 men</b> and <b>4898 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>43%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>130 men</b> and <b>143 women</b>, three years later, <b>29 men</b> and <b>49 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>22%</b>  and <b>female graduation rate</b> of <b>34%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_494eddc943bf6b310ef419afd3cf1250.setContent(html_00c5785f8db22defbf638f2992cb6b8b);
+            
+        
+
+        marker_a89b455f8673ba6f2ca711e6f35a4748.bindPopup(popup_494eddc943bf6b310ef419afd3cf1250)
+        ;
+
+        
+    
+    
+            marker_a89b455f8673ba6f2ca711e6f35a4748.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Community College of Aurora</b><br>(Aurora, Colorado)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a89b455f8673ba6f2ca711e6f35a4748.setIcon(beautify_icon_77f983c2acac28c22f3bfff347bf89a9);
+            
+    
+            var marker_599b7c7bd9721a884b2c09ed33aa66af = L.marker(
+                [36.134857, -86.857342],
+                {
+  "name": "Nashville State Community College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_c947ad7b97b41644f94070b37644be09 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_599b7c7bd9721a884b2c09ed33aa66af.setIcon(beautify_icon_c947ad7b97b41644f94070b37644be09);
+        
+    
+        var popup_5542476dc15fafcea288207cfdbf907a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45ad5b0d494f669193cfedd89d1bf091 = $(`<div id="html_45ad5b0d494f669193cfedd89d1bf091" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Nashville State Community College</b></div><div style="font-size:13px;"><i>Nashville, Tennessee</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.nscc.edu/">https://www.nscc.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>2374 men</b> and <b>4234 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>35%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>445 men</b> and <b>678 women</b>, three years later, <b>68 men</b> and <b>123 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>15%</b>  and <b>female graduation rate</b> of <b>18%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_5542476dc15fafcea288207cfdbf907a.setContent(html_45ad5b0d494f669193cfedd89d1bf091);
+            
+        
+
+        marker_599b7c7bd9721a884b2c09ed33aa66af.bindPopup(popup_5542476dc15fafcea288207cfdbf907a)
+        ;
+
+        
+    
+    
+            marker_599b7c7bd9721a884b2c09ed33aa66af.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Nashville State Community College</b><br>(Nashville, Tennessee)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_599b7c7bd9721a884b2c09ed33aa66af.setIcon(beautify_icon_c947ad7b97b41644f94070b37644be09);
+            
+    
+            var marker_bb25add3ef9daaea033d528994962a79 = L.marker(
+                [36.484961, -82.408885],
+                {
+  "name": "Northeast State Community College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_7df9562376bab80df584698de0d556fd = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_bb25add3ef9daaea033d528994962a79.setIcon(beautify_icon_7df9562376bab80df584698de0d556fd);
+        
+    
+        var popup_2f79bd992087e666cc4c32afef34bae8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9753b9071ffe87904f22cd603a8c363 = $(`<div id="html_c9753b9071ffe87904f22cd603a8c363" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Northeast State Community College</b></div><div style="font-size:13px;"><i>Blountville, Tennessee</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.northeaststate.edu/">https://www.northeaststate.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>2672 men</b> and <b>2802 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>48%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>461 men</b> and <b>617 women</b>, three years later, <b>160 men</b> and <b>187 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>34%</b>  and <b>female graduation rate</b> of <b>30%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_2f79bd992087e666cc4c32afef34bae8.setContent(html_c9753b9071ffe87904f22cd603a8c363);
+            
+        
+
+        marker_bb25add3ef9daaea033d528994962a79.bindPopup(popup_2f79bd992087e666cc4c32afef34bae8)
+        ;
+
+        
+    
+    
+            marker_bb25add3ef9daaea033d528994962a79.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Northeast State Community College</b><br>(Blountville, Tennessee)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bb25add3ef9daaea033d528994962a79.setIcon(beautify_icon_7df9562376bab80df584698de0d556fd);
+            
+    
+            var marker_24412d63177e265be09cbae097fbcef2 = L.marker(
+                [36.174754, -85.504039],
+                {
+  "name": "Tennessee Tech University",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_659db52683873496a156b4128aad8120 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_24412d63177e265be09cbae097fbcef2.setIcon(beautify_icon_659db52683873496a156b4128aad8120);
+        
+    
+        var popup_6792bb523eed6082d73d3933e4c5d829 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_88fb14387dd033ebddea188ebe27efee = $(`<div id="html_88fb14387dd033ebddea188ebe27efee" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Tennessee Tech University</b></div><div style="font-size:13px;"><i>Cookeville, Tennessee</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.tntech.edu/">https://www.tntech.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tennessee Tech University recieved  <b>4162 applications from men</b> and <b>4610 applications from women</b>.  Of these applications, <b>3556 men</b> and <b>3739 women were admitted</b>, and  <b>1098 men</b> and <b>890 women ultimately enrolled</b>. Overall, <b>85% of men</b>  were admitted and <b>30%</b> ultimately enrolled, compared to <b>81% of female</b> applicants being accepted  and <b>23%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>4814 men</b> and <b>4024 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>54%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>520 men</b> and <b>759 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>40%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>1010 men</b> and <b>740 women</b>, six years later, <b>517 men</b> and <b>432 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>51%</b>  and <b>female graduation rate</b> of <b>58%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_6792bb523eed6082d73d3933e4c5d829.setContent(html_88fb14387dd033ebddea188ebe27efee);
+            
+        
+
+        marker_24412d63177e265be09cbae097fbcef2.bindPopup(popup_6792bb523eed6082d73d3933e4c5d829)
+        ;
+
+        
+    
+    
+            marker_24412d63177e265be09cbae097fbcef2.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Tennessee Tech University</b><br>(Cookeville, Tennessee)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_24412d63177e265be09cbae097fbcef2.setIcon(beautify_icon_659db52683873496a156b4128aad8120);
+            
+    
+            var marker_1906eed0905a0d486b2bcbaca03a738e = L.marker(
+                [35.365903, -86.299184],
+                {
+  "name": "Motlow State Community College",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_de79822120ac3045e025f6ba12cf056d = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_1906eed0905a0d486b2bcbaca03a738e.setIcon(beautify_icon_de79822120ac3045e025f6ba12cf056d);
+        
+    
+        var popup_7c39aca2e7b7879ff174a608bc5a1552 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cac7baedefc015f698b44975b87993ea = $(`<div id="html_cac7baedefc015f698b44975b87993ea" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Motlow State Community College</b></div><div style="font-size:13px;"><i>Tullahoma, Tennessee</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.mscc.edu/">https://www.mscc.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>2369 men</b> and <b>3691 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>39%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Three-Year Graduation (Associate's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>602 men</b> and <b>883 women</b>, three years later, <b>133 men</b> and <b>293 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>22%</b>  and <b>female graduation rate</b> of <b>33%</b>.</span> </div><br><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_7c39aca2e7b7879ff174a608bc5a1552.setContent(html_cac7baedefc015f698b44975b87993ea);
+            
+        
+
+        marker_1906eed0905a0d486b2bcbaca03a738e.bindPopup(popup_7c39aca2e7b7879ff174a608bc5a1552)
+        ;
+
+        
+    
+    
+            marker_1906eed0905a0d486b2bcbaca03a738e.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Motlow State Community College</b><br>(Tullahoma, Tennessee)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1906eed0905a0d486b2bcbaca03a738e.setIcon(beautify_icon_de79822120ac3045e025f6ba12cf056d);
+            
+    
+            var marker_d62e419eb29ae95658d32e39ff0eeda1 = L.marker(
+                [42.000765, -87.656872],
+                {
+  "name": "Loyola University Chicago",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_7c3aa8ac54287e489cfaaa2801ce3331 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_d62e419eb29ae95658d32e39ff0eeda1.setIcon(beautify_icon_7c3aa8ac54287e489cfaaa2801ce3331);
+        
+    
+        var popup_f26c0c09856f655189da994c9a3bcf03 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_06f42e38929a902b79c2b17d13080828 = $(`<div id="html_06f42e38929a902b79c2b17d13080828" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Loyola University Chicago</b></div><div style="font-size:13px;"><i>Chicago, Illinois</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.luc.edu/">https://www.luc.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Loyola University Chicago recieved  <b>13590 applications from men</b> and <b>26878 applications from women</b>.  Of these applications, <b>10297 men</b> and <b>22640 women were admitted</b>, and  <b>872 men</b> and <b>2079 women ultimately enrolled</b>. Overall, <b>75% of men</b>  were admitted and <b>8%</b> ultimately enrolled, compared to <b>84% of female</b> applicants being accepted  and <b>9%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>3955 men</b> and <b>8532 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>31%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>1490 men</b> and <b>3420 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>30%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>838 men</b> and <b>1822 women</b>, six years later, <b>657 men</b> and <b>1449 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>78%</b>  and <b>female graduation rate</b> of <b>79%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_f26c0c09856f655189da994c9a3bcf03.setContent(html_06f42e38929a902b79c2b17d13080828);
+            
+        
+
+        marker_d62e419eb29ae95658d32e39ff0eeda1.bindPopup(popup_f26c0c09856f655189da994c9a3bcf03)
+        ;
+
+        
+    
+    
+            marker_d62e419eb29ae95658d32e39ff0eeda1.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Loyola University Chicago</b><br>(Chicago, Illinois)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d62e419eb29ae95658d32e39ff0eeda1.setIcon(beautify_icon_7c3aa8ac54287e489cfaaa2801ce3331);
+            
+    
+            var marker_41e9bf87876bbc0d42268de13c1e42d2 = L.marker(
+                [36.301643, -82.366954],
+                {
+  "name": "East Tennessee State University",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_e6e2d0e3eea1d96ccc61f166e043e10a = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_41e9bf87876bbc0d42268de13c1e42d2.setIcon(beautify_icon_e6e2d0e3eea1d96ccc61f166e043e10a);
+        
+    
+        var popup_69db6604e1ac6abbeb8eaa87f1a79af2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83bf67b26e41f803d36d0713c2668437 = $(`<div id="html_83bf67b26e41f803d36d0713c2668437" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>East Tennessee State University</b></div><div style="font-size:13px;"><i>Johnson City, Tennessee</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.etsu.edu/">https://www.etsu.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>East Tennessee State University recieved  <b>3355 applications from men</b> and <b>6548 applications from women</b>.  Of these applications, <b>2880 men</b> and <b>5742 women were admitted</b>, and  <b>782 men</b> and <b>1359 women ultimately enrolled</b>. Overall, <b>85% of men</b>  were admitted and <b>27%</b> ultimately enrolled, compared to <b>87% of female</b> applicants being accepted  and <b>23%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>4159 men</b> and <b>6474 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>39%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>985 men</b> and <b>1968 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>33%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>875 men</b> and <b>1158 women</b>, six years later, <b>381 men</b> and <b>633 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>43%</b>  and <b>female graduation rate</b> of <b>54%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_69db6604e1ac6abbeb8eaa87f1a79af2.setContent(html_83bf67b26e41f803d36d0713c2668437);
+            
+        
+
+        marker_41e9bf87876bbc0d42268de13c1e42d2.bindPopup(popup_69db6604e1ac6abbeb8eaa87f1a79af2)
+        ;
+
+        
+    
+    
+            marker_41e9bf87876bbc0d42268de13c1e42d2.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>East Tennessee State University</b><br>(Johnson City, Tennessee)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_41e9bf87876bbc0d42268de13c1e42d2.setIcon(beautify_icon_e6e2d0e3eea1d96ccc61f166e043e10a);
+            
+    
+            var marker_419bc242f4c8235dd212c591e7fb4ccc = L.marker(
+                [37.714193, -89.217273],
+                {
+  "name": "Southern Illinois University",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_f5f068cb2dda306baf984b9cf0622641 = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_419bc242f4c8235dd212c591e7fb4ccc.setIcon(beautify_icon_f5f068cb2dda306baf984b9cf0622641);
+        
+    
+        var popup_9f5d186079f82bebfaf0d1ebca6cbaa7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24be8c2cefb466e1c62f534bb5c76df6 = $(`<div id="html_24be8c2cefb466e1c62f534bb5c76df6" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>Southern Illinois University</b></div><div style="font-size:13px;"><i>Carbondale, Illinois</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://siu.edu/">https://siu.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Southern Illinois University recieved  <b>4235 applications from men</b> and <b>6166 applications from women</b>.  Of these applications, <b>3797 men</b> and <b>5610 women were admitted</b>, and  <b>713 men</b> and <b>908 women ultimately enrolled</b>. Overall, <b>89% of men</b>  were admitted and <b>18%</b> ultimately enrolled, compared to <b>91% of female</b> applicants being accepted  and <b>16%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>4008 men</b> and <b>4187 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>48%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>1459 men</b> and <b>1705 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>46%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>636 men</b> and <b>686 women</b>, six years later, <b>333 men</b> and <b>401 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>52%</b>  and <b>female graduation rate</b> of <b>58%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_9f5d186079f82bebfaf0d1ebca6cbaa7.setContent(html_24be8c2cefb466e1c62f534bb5c76df6);
+            
+        
+
+        marker_419bc242f4c8235dd212c591e7fb4ccc.bindPopup(popup_9f5d186079f82bebfaf0d1ebca6cbaa7)
+        ;
+
+        
+    
+    
+            marker_419bc242f4c8235dd212c591e7fb4ccc.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>Southern Illinois University</b><br>(Carbondale, Illinois)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_419bc242f4c8235dd212c591e7fb4ccc.setIcon(beautify_icon_f5f068cb2dda306baf984b9cf0622641);
+            
+    
+            var marker_faf0832e51eb8bb1f93ea74b7650bf81 = L.marker(
+                [45.303629, -122.967494],
+                {
+  "name": "George Fox University",
+}
+            ).addTo(feature_group_2446f64c3238506ea7ac33d128a9433f);
+        
+    
+            var beautify_icon_ac72fcaebfb0ff6de9c775329ae17b8d = new L.BeautifyIcon.icon(
+                {
+  "icon": "institution",
+  "iconShape": "marker",
+  "borderWidth": 0,
+  "borderColor": "#000",
+  "textColor": "white",
+  "backgroundColor": "#001A50",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_faf0832e51eb8bb1f93ea74b7650bf81.setIcon(beautify_icon_ac72fcaebfb0ff6de9c775329ae17b8d);
+        
+    
+        var popup_dcfe3b3083f913b955bbe94a8e860409 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d24bbab757af636b7384b03c3e15a062 = $(`<div id="html_d24bbab757af636b7384b03c3e15a062" style="width: 100.0%; height: 100.0%;"><html><div style="color:#001A50;"><div style="font-size:18px;font-family:Source Sans Pro;"><b>George Fox University</b></div><div style="font-size:13px;"><i>Newberg, Oregon</i></div><div style="font-size:13px;"><a target="_blank" rel="noopener noreferrer" href="https://www.georgefox.edu/">https://www.georgefox.edu/</a></div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Admissions</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>George Fox University recieved  <b>1597 applications from men</b> and <b>2140 applications from women</b>.  Of these applications, <b>1540 men</b> and <b>2063 women were admitted</b>, and  <b>277 men</b> and <b>326 women ultimately enrolled</b>. Overall, <b>96% of men</b>  were admitted and <b>17%</b> ultimately enrolled, compared to <b>96% of female</b> applicants being accepted  and <b>15%</b> ultimately enrolling. </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Undergraduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the undergraduate level, a total of <b>1242 men</b> and <b>1762 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>41%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Enrollment (Graduate)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>At the graduate level, a total of <b>489 men</b> and <b>1038 women</b> were enrolled,  meaning a <b>male enrollment share</b> of <b>32%</b>.</span> </div><br> <div style="font-size:15px;font-family:Source Sans Pro;"><b><u>Six-Year Graduation (Bachelor's)</u></b>:</div>  <div style="color:black;font-size:13px;font-family:Source Sans Pro;"> <span>Tracking a cohort of <b>273 men</b> and <b>356 women</b>, six years later, <b>172 men</b> and <b>260 women graduated</b>, meaning a  <b>male graduation rate</b> of <b>63%</b>  and <b>female graduation rate</b> of <b>73%</b>.</span> </div><div style="font-size:14px;color:white">_____________________________________________________________________</div></div></html></div>`)[0];
+                popup_dcfe3b3083f913b955bbe94a8e860409.setContent(html_d24bbab757af636b7384b03c3e15a062);
+            
+        
+
+        marker_faf0832e51eb8bb1f93ea74b7650bf81.bindPopup(popup_dcfe3b3083f913b955bbe94a8e860409)
+        ;
+
+        
+    
+    
+            marker_faf0832e51eb8bb1f93ea74b7650bf81.bindTooltip(
+                `<div style="color:#001A50;font-family:Source Sans Pro;font-size:13px;text-align:center;">
+                     <b>George Fox University</b><br>(Newberg, Oregon)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_faf0832e51eb8bb1f93ea74b7650bf81.setIcon(beautify_icon_ac72fcaebfb0ff6de9c775329ae17b8d);
+            
+    
+            feature_group_2446f64c3238506ea7ac33d128a9433f.addTo(map_d9934cf479414755681327990a7c6ded);
+        
+    
+            var feature_group_2446f64c3238506ea7ac33d128a9433fsearchControl = new L.Control.Search({
+                layer: feature_group_2446f64c3238506ea7ac33d128a9433f,
+                
+                propertyName: 'name',
+                
+                collapsed: false,
+                textPlaceholder: 'Search by HEMAC school name/location',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                feature_group_2446f64c3238506ea7ac33d128a9433fsearchControl.on('search:locationfound', function(e) {
+                    feature_group_2446f64c3238506ea7ac33d128a9433f.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    e.layer.setStyle({
+  "color": "#06474D",
+});
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                feature_group_2446f64c3238506ea7ac33d128a9433fsearchControl.on('search:collapsed', function(e) {
+                        feature_group_2446f64c3238506ea7ac33d128a9433f.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_d9934cf479414755681327990a7c6ded.addControl( feature_group_2446f64c3238506ea7ac33d128a9433fsearchControl );
+
+        
+</script>
+</html>
