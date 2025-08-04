@@ -252,7 +252,7 @@ class LandingMap:
                                        icon='institution',
                                        text_color="white",
                                        border_width=0,
-                                       background_color='#001A50'),
+                                       background_color="#001950B1"),
                 name=dat['name']
             )
             mkr.add_to(fg)
