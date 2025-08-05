@@ -5,6 +5,7 @@ from typing import Dict
 import pandas as pd
 
 from landing_map import LandingMap
+from landing_table import LandingTable
 from plot_generator import PlotGenerator
 
 RECENT_YEAR = 2023
@@ -23,6 +24,7 @@ def get_schools() -> Dict[str,str]:
         json.dump(schools,hmjs,indent=4)
     return schools
 
+
 def make_map(schls: Dict[str,str]) -> None:
     # make landing page map
     lm = LandingMap(schls,RECENT_YEAR)
@@ -31,14 +33,20 @@ def make_map(schls: Dict[str,str]) -> None:
     lm.build_map()
 
 
+def make_table(schls: Dict[str,str]) -> None:
+    # make landing page table
+    lt = LandingTable(schls,RECENT_YEAR)
+    lt.build_table()
+
+
 def make_plots(schls: Dict[str,str]) -> None:
     # make school-specific plots
     pg = PlotGenerator(schls,RECENT_YEAR)
     pg.gen_all_plots()
-
+    
 
 def main(pull_anyway: bool = False):
-    # generate landing page map and school specific plots
+    # generate landing page map, landing table, and school specific plots
     schools_path = os.path.join('data','hemac_schools.json')
 
     if os.path.exists(schools_path):
@@ -49,6 +57,7 @@ def main(pull_anyway: bool = False):
             return None     # no changes since last pulled, do nothing
         else:
             make_map(new_schools)
+            make_table(new_schools)
             make_plots(new_schools)
 
     else:
@@ -56,6 +65,7 @@ def main(pull_anyway: bool = False):
         with open(schools_path,'r') as schlj:
             schls = json.load(schlj)
         make_map(schls)
+        make_table(schls)
         make_plots(schls)
 
 

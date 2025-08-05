@@ -56,15 +56,15 @@ class LandingMap:
         :param schools: dict of partner school "ID: Name" key-value pairs
         :param most_recent_year: most recent year of data; defaults to 2023
         '''
-        char = Characteristics(most_recent_year).run(False,False).query('year == @most_recent_year') # fix this
+        char = Characteristics(most_recent_year).run(False,False)   # .query('year == @most_recent_year') # fix this
 
-        admit = Admissions(most_recent_year).run(False,True,False).query('year == @most_recent_year') # fix this
+        admit = Admissions(most_recent_year).run(False,True,False)
         
-        enroll_undergrad = Enrollment(most_recent_year).run('undergrad',False,True,False).query('year == @most_recent_year') # fix this
-        enroll_grad = Enrollment(most_recent_year).run('grad',False,True,False).query('year == @most_recent_year') # fix this
+        enroll_undergrad = Enrollment(most_recent_year).run('undergrad',False,True,False)
+        enroll_grad = Enrollment(most_recent_year).run('grad',False,True,False)
 
-        grad_two_year = Graduation(most_recent_year).run('assc',False,True,False).query('year == @most_recent_year') # fix this
-        grad_four_year = Graduation(most_recent_year).run('bach',False,True,False).query('year == @most_recent_year') # fix this
+        grad_two_year = Graduation(most_recent_year).run('assc',False,True,False)
+        grad_four_year = Graduation(most_recent_year).run('bach',False,True,False)
 
         data = {
             'characteristics': char,

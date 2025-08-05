@@ -1,0 +1,356 @@
+
+                    <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                        <meta charset="UTF-8">
+                        <title>HEMAC Schools</title>
+
+                        <!-- Bootstrap CSS -->
+                        <link
+                            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"
+                            rel="stylesheet"
+                            integrity="sha384-…"
+                            crossorigin="anonymous"
+                        />
+
+                        <!-- DataTables + Buttons CSS -->
+                        <link
+                            href="https://cdn.datatables.net/v/bs5/dt-2.3.1/r-3.0.4/b-3.2.3/b-html5-3.2.3/b-print-3.2.3/datatables.min.css"
+                            rel="stylesheet"
+                        />
+                        <style>
+                            /* ==== Pagination ==== */
+                            .dataTables_wrapper .dataTables_paginate .pagination .page-item.active .page-link {
+                            background-color: #001A50 !important;
+                            border-color:     #001A50 !important;
+                            color:            #fff     !important;
+                            }
+                            .dataTables_wrapper .dataTables_paginate .pagination .page-item .page-link:hover {
+                            background-color: #05292C !important;
+                            border-color:     #05292C !important;
+                            color:            #fff     !important;
+                            }
+
+                            /* ==== Export Buttons ==== */
+                            .btn-dt-teal {
+                            background-color: #001A50 !important;
+                            border-color:     #001A50 !important;
+                            color:            #fff     !important;
+                            }
+                            .btn-dt-teal:hover,
+                            .btn-dt-teal:focus {
+                            background-color: #05292C !important;  
+                            border-color:     #05292C !important;
+                            color:            #fff     !important;
+                            }
+
+                            /* ==== Table styling ==== */
+                            table.dataTable th,
+                            table.dataTable td {
+                            font-family: 'Helvetica';
+                            color:        #000000 ;
+                            }
+                            table.dataTable th:first-child,
+
+                            table.dataTable td:first-child {
+                            position: sticky;
+                            left: 0;
+                            z-index: 2; 
+                            }
+                            /* Override Bootstrap pagination styling */
+                            .pagination .page-item .page-link {
+                                background-color: #001A50 !important;
+                                border-color: #333333 !important;
+                                color: #ffffff !important;
+                            }
+
+                            .pagination .page-item.active .page-link {
+                                background-color: #001A50 !important;
+                                border-color: #333333 !important;
+                                color: #AAC9B8 !important;
+                                z-index: 3;
+                            }
+
+                            .pagination .page-item .page-link:hover {
+                                background-color: #001A50 !important;
+                                border-color: #333333 !important;
+                                color: #ffffff !important;
+                            }
+
+                            .pagination .page-item.disabled .page-link {
+                                background-color: #001A50 !important;
+                                border-color: #333333 !important;
+                                color: #666666 !important;
+                            }
+                        </style>
+                        </head>
+                        <body class="p-4">
+                        <table border="1" class="dataframe cell-border display compact hover table table-striped" id="hemac_schools">
+  <thead>
+    <tr style="text-align: right;">
+      <th>School</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Level</th>
+      <th>MenEnrolled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Arizona State University</td>
+      <td>Tempe</td>
+      <td>Arizona</td>
+      <td>Undergraduate</td>
+      <td>51%</td>
+    </tr>
+    <tr>
+      <td>Bridgewater State University</td>
+      <td>Bridgewater</td>
+      <td>Massachusetts</td>
+      <td>Undergraduate</td>
+      <td>42%</td>
+    </tr>
+    <tr>
+      <td>Belmont University</td>
+      <td>Nashville</td>
+      <td>Tennessee</td>
+      <td>Undergraduate</td>
+      <td>34%</td>
+    </tr>
+    <tr>
+      <td>Carthage College</td>
+      <td>Kenosha</td>
+      <td>Wisconsin</td>
+      <td>Undergraduate</td>
+      <td>44%</td>
+    </tr>
+    <tr>
+      <td>Central Piedmont Community College</td>
+      <td>Charlotte</td>
+      <td>North Carolina</td>
+      <td>Undergraduate</td>
+      <td>42%</td>
+    </tr>
+    <tr>
+      <td>Community College of Vermont</td>
+      <td>Montpelier</td>
+      <td>Vermont</td>
+      <td>Undergraduate</td>
+      <td>30%</td>
+    </tr>
+    <tr>
+      <td>Excelsior University</td>
+      <td>Albany</td>
+      <td>New York</td>
+      <td>Undergraduate</td>
+      <td>49%</td>
+    </tr>
+    <tr>
+      <td>Maryville College</td>
+      <td>Maryville</td>
+      <td>Tennessee</td>
+      <td>Undergraduate</td>
+      <td>45%</td>
+    </tr>
+    <tr>
+      <td>Mesa Community College</td>
+      <td>Mesa</td>
+      <td>Arizona</td>
+      <td>Undergraduate</td>
+      <td>45%</td>
+    </tr>
+    <tr>
+      <td>Northeastern Junior College</td>
+      <td>Sterling</td>
+      <td>Colorado</td>
+      <td>Undergraduate</td>
+      <td>36%</td>
+    </tr>
+    <tr>
+      <td>Queens University</td>
+      <td>Charlotte</td>
+      <td>North Carolina</td>
+      <td>Undergraduate</td>
+      <td>37%</td>
+    </tr>
+    <tr>
+      <td>Umpqua Community College</td>
+      <td>Roseburg</td>
+      <td>Oregon</td>
+      <td>Undergraduate</td>
+      <td>37%</td>
+    </tr>
+    <tr>
+      <td>University of Washington, Seattle</td>
+      <td>Seattle</td>
+      <td>Washington</td>
+      <td>Undergraduate</td>
+      <td>53%</td>
+    </tr>
+    <tr>
+      <td>University of Central Florida</td>
+      <td>Orlando</td>
+      <td>Florida</td>
+      <td>Undergraduate</td>
+      <td>45%</td>
+    </tr>
+    <tr>
+      <td>University of Montana</td>
+      <td>Missoula</td>
+      <td>Montana</td>
+      <td>Undergraduate</td>
+      <td>42%</td>
+    </tr>
+    <tr>
+      <td>University of Oregon</td>
+      <td>Eugene</td>
+      <td>Oregon</td>
+      <td>Undergraduate</td>
+      <td>44%</td>
+    </tr>
+    <tr>
+      <td>University of Tennessee, Knoxville</td>
+      <td>Knoxville</td>
+      <td>Tennessee</td>
+      <td>Undergraduate</td>
+      <td>45%</td>
+    </tr>
+    <tr>
+      <td>University of Vermont</td>
+      <td>Burlington</td>
+      <td>Vermont</td>
+      <td>Undergraduate</td>
+      <td>36%</td>
+    </tr>
+    <tr>
+      <td>Vermont State University</td>
+      <td>Randolph</td>
+      <td>Vermont</td>
+      <td>Undergraduate</td>
+      <td>44%</td>
+    </tr>
+    <tr>
+      <td>Wabash College</td>
+      <td>Crawfordsville</td>
+      <td>Indiana</td>
+      <td>Undergraduate</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td>Wake Technical Community College</td>
+      <td>Raleigh</td>
+      <td>North Carolina</td>
+      <td>Undergraduate</td>
+      <td>45%</td>
+    </tr>
+    <tr>
+      <td>Roane State Community College</td>
+      <td>Harriman</td>
+      <td>Tennessee</td>
+      <td>Undergraduate</td>
+      <td>34%</td>
+    </tr>
+    <tr>
+      <td>Community College of Aurora</td>
+      <td>Aurora</td>
+      <td>Colorado</td>
+      <td>Undergraduate</td>
+      <td>43%</td>
+    </tr>
+    <tr>
+      <td>Nashville State Community College</td>
+      <td>Nashville</td>
+      <td>Tennessee</td>
+      <td>Undergraduate</td>
+      <td>35%</td>
+    </tr>
+    <tr>
+      <td>Northeast State Community College</td>
+      <td>Blountville</td>
+      <td>Tennessee</td>
+      <td>Undergraduate</td>
+      <td>48%</td>
+    </tr>
+    <tr>
+      <td>Tennessee Tech University</td>
+      <td>Cookeville</td>
+      <td>Tennessee</td>
+      <td>Undergraduate</td>
+      <td>54%</td>
+    </tr>
+    <tr>
+      <td>Motlow State Community College</td>
+      <td>Tullahoma</td>
+      <td>Tennessee</td>
+      <td>Undergraduate</td>
+      <td>39%</td>
+    </tr>
+    <tr>
+      <td>Loyola University Chicago</td>
+      <td>Chicago</td>
+      <td>Illinois</td>
+      <td>Undergraduate</td>
+      <td>31%</td>
+    </tr>
+    <tr>
+      <td>East Tennessee State University</td>
+      <td>Johnson City</td>
+      <td>Tennessee</td>
+      <td>Undergraduate</td>
+      <td>39%</td>
+    </tr>
+    <tr>
+      <td>Southern Illinois University</td>
+      <td>Carbondale</td>
+      <td>Illinois</td>
+      <td>Undergraduate</td>
+      <td>48%</td>
+    </tr>
+    <tr>
+      <td>George Fox University</td>
+      <td>Newberg</td>
+      <td>Oregon</td>
+      <td>Undergraduate</td>
+      <td>41%</td>
+    </tr>
+  </tbody>
+</table>
+
+                        <!-- JS dependencies at end for faster load -->
+                        <script
+                            src="https://code.jquery.com/jquery-3.7.0.min.js"
+                            integrity="sha256-…"
+                            crossorigin="anonymous">
+                        </script>
+                        <script
+                            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+                            integrity="sha384-…"
+                            crossorigin="anonymous">
+                        </script>
+                        <script
+                            src="https://cdn.datatables.net/v/bs5/dt-2.3.1/b-3.2.3/b-html5-3.2.3/b-print-3.2.3/datatables.min.js">
+                        </script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+                        <script>
+                        $(function () {
+                            $('#hemac_schools').DataTable({
+                                dom: 'Bfrtip',
+                                language: {
+                                        search: "",                       
+                                        searchPlaceholder: "Search a school",
+                                    },
+                                buttons: [
+                                            { extend: 'copy',  className: 'btn btn-sm btn-dt-teal' },
+                                            { extend: 'csv',   className: 'btn btn-sm btn-dt-teal' },
+                                            { extend: 'excel', className: 'btn btn-sm btn-dt-teal' }
+                                        ],
+                                responsive: true,
+                                scrollY: true
+                            });
+                            });
+                        </script>
+                        </body>
+                    </html>
