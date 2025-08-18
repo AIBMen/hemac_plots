@@ -6,6 +6,8 @@ import pandas as pd
 
 from landing_map import LandingMap
 from landing_table import LandingTable
+from simple_landing_map import SimpleLandingMap
+from simple_landing_table import SimpleLandingTable
 from plot_generator import PlotGenerator
 
 RECENT_YEAR = 2023
@@ -39,13 +41,26 @@ def make_table(schls: Dict[str,str]) -> None:
     lt.build_table()
 
 
+def make_simple_map(schls: Dict[str,str]) -> None:
+    # make simple landing page map
+    lm = SimpleLandingMap(schls,RECENT_YEAR)
+    lm.build_map()
+
+
+def make_simple_table(schls: Dict[str,str]) -> None:
+    # make simple landing page table
+    lt = SimpleLandingTable(schls,RECENT_YEAR)
+    lt.build_table()
+
+
 def make_plots(schls: Dict[str,str]) -> None:
     # make school-specific plots
     pg = PlotGenerator(schls,RECENT_YEAR)
     pg.gen_all_plots()
     
 
-def main(pull_anyway: bool = False):
+def main(pull_anyway: bool = False,
+         simple_only: bool = True):
     # generate landing page map, landing table, and school specific plots
     schools_path = os.path.join('data','hemac_schools.json')
 
@@ -56,18 +71,26 @@ def main(pull_anyway: bool = False):
         if new_schools.keys() == schools_last_pulled.keys() and not pull_anyway:
             return None     # no changes since last pulled, do nothing
         else:
-            make_map(new_schools)
-            make_table(new_schools)
-            make_plots(new_schools)
+            if simple_only:
+                make_simple_map(new_schools)
+                make_simple_table(new_schools)
+            else:
+                make_map(new_schools)
+                make_table(new_schools)
+                make_plots(new_schools)
 
     else:
-        get_schools()
+        new_schools = get_schools()
         with open(schools_path,'r') as schlj:
             schls = json.load(schlj)
-        make_map(schls)
-        make_table(schls)
-        make_plots(schls)
+        if simple_only:
+            make_simple_map(new_schools)
+            make_simple_table(new_schools)
+        else:
+            make_map(schls)
+            make_table(schls)
+            make_plots(schls)
 
 
 if __name__ == '__main__':
-    main(pull_anyway=True)
+    main(pull_anyway=True, simple_only=True)

@@ -1,9 +1,9 @@
 .env
 venv
+__pycache__
+.DS_Store
 characteristicsdata
 admissionsdata
 enrollmentdata
 completiondata
 graduationdata
-__pycache__
-.DS_Store
